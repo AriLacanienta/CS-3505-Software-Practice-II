@@ -13,14 +13,16 @@
 const int GENERATION_SIZE = 64;
 const int NUM_GENERATIONS = 50;
 
+void convertRuleSetNumberToRuleSetArray(int ruleSetNumber, int ruleSetArray[8]);
+void displayGeneration(int generationToDisplay[], int length);
+void computeNextGeneration(int currentGeneration[], int nextGeneration[], int generationSize, int ruleSet[]);
+int convertNeighborhoodToIndex(int left, int center, int right);
+
 /**
  * Controls program flow
 */
 int main() 
 {
-    void convertRuleSetNumberToRuleSetArray(int ruleSetNumber, int ruleSetArray[8]);
-    void displayGeneration(int generationToDisplay[], int length);
-    void computeNextGeneration(int currentGeneration[], int nextGeneration[], int generationSize, int ruleSet[]);
 
     // Get input
     int ruleSetNumber;
@@ -117,8 +119,6 @@ void displayGeneration(int generationToDisplay[], int length)
 */
 void computeNextGeneration(int currentGeneration[], int nextGeneration[], int generationSize, int ruleSet[]) {
 
-    int convertNeighborhoodToindex(int left, int center, int right);
-
     // Copy edges down
     nextGeneration[0] = currentGeneration[0];
     nextGeneration[generationSize-1] = currentGeneration[generationSize-1];
@@ -126,7 +126,7 @@ void computeNextGeneration(int currentGeneration[], int nextGeneration[], int ge
     for (int i = 1; i < generationSize - 1; i++)
     {
         // Consult the ruleset
-        int ruleIndex = convertNeighborhoodToindex(currentGeneration[i-1], currentGeneration[i], currentGeneration[i+1]);
+        int ruleIndex = convertNeighborhoodToIndex(currentGeneration[i-1], currentGeneration[i], currentGeneration[i+1]);
         nextGeneration[i] = ruleSet[ruleIndex];
     }
 };
@@ -140,7 +140,7 @@ void computeNextGeneration(int currentGeneration[], int nextGeneration[], int ge
  * 
  * OUTPUT: int[0,7]
 */
-int convertNeighborhoodToindex(int left, int center, int right) {
+int convertNeighborhoodToIndex(int left, int center, int right) {
     return left * 4 + center * 2 + right * 1;
 };
 
