@@ -18,9 +18,11 @@ const int NUM_GENERATIONS = 50;
 */
 int main() 
 {
-    void convertRuleSetNumberToRuleSetArray(int ruleSetNumber, int (&ruleSetArray)[8]);
+    void convertRuleSetNumberToRuleSetArray(int ruleSetNumber, int ruleSetArray[8]);
     void displayGeneration(int generationToDisplay[], int length);
     void computeNextGeneration(int currentGeneration[], int nextGeneration[], int generationSize, int ruleSet[]);
+
+
 
     // Get input
     int ruleSetNumber;
@@ -75,7 +77,7 @@ int main()
  * 
  * OUTPUT: ruleSetArray
 */
-void convertRuleSetNumberToRuleSetArray(int ruleSetNumber, int (&ruleSetArray)[8]) 
+void convertRuleSetNumberToRuleSetArray(int ruleSetNumber, int ruleSetArray[8]) 
 {
     // Evaluates one binary place-value at a time by repeatedly halving
     for (int i = 0; i < 8; i++)
@@ -120,11 +122,14 @@ void computeNextGeneration(int currentGeneration[], int nextGeneration[], int ge
 
     int convertNeighborhoodToindex(int left, int center, int right);
 
+
+    // Copy edges down
     nextGeneration[0] = currentGeneration[0];
     nextGeneration[generationSize-1] = currentGeneration[generationSize-1];
 
     for (int i = 1; i < generationSize - 1; i++)
     {
+        // Consult the ruleset
         int ruleIndex = convertNeighborhoodToindex(currentGeneration[i-1], currentGeneration[i], currentGeneration[i+1]);
         nextGeneration[i] = ruleSet[ruleIndex];
     }
