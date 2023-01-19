@@ -24,11 +24,14 @@ int main()
 
     // Get input
     int ruleSetNumber;
-    do
+    std::cout << "Enter a ruleset id [0-255]: ";
+    std::cin >> ruleSetNumber; 
+    
+    if (ruleSetNumber < 0 || ruleSetNumber > 255)
     {
-        std::cout << "Enter a ruleset id [0-255]: ";
-        std::cin >> ruleSetNumber; 
-    } while (ruleSetNumber < 0 || ruleSetNumber > 255);
+        std::cout << ruleSetNumber << " Is out of bounds [0-255]";
+        return 0;
+    }
     
     // Convert ruleset
     int ruleSetArray[8];
