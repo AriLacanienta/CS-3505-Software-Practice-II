@@ -8,7 +8,7 @@
 ### Overview
 This project generates celular autonoma based on rules specified by an 8 digit binary number. Generation size and number of generations is also editable.
 
-Running the program with 126, 129, and 117 have some pretty cool results.
+Running the program with 126, 129, and 117 has some pretty cool results.
 
 ## Assignment 02 - Facade
 
