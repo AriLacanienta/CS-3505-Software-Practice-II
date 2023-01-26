@@ -73,8 +73,8 @@ int main (int argc, char **argv)
 
         // The position of the character depends on the center point
         // plus the angle and the radius.
-        x = 210 + cos(rad2) * 150;
-        y = 300 + sin(rad2) * 150;
+        x = 210 + cos(rad2) * (-10)*rad2;
+        y = 300 + sin(rad2) * (-10)*rad2;
 
         // This ugly function defines where any following text will be placed
         // on the page. The cos/sin stuff is actually defining a 2D rotation
