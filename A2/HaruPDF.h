@@ -7,11 +7,11 @@ class HaruPDF
 {
 private:
     /* data */
-    HPDF_Doc  pdf;
-    HPDF_Font font;
-    HPDF_Page page;
+    HPDF_Doc  _pdf;
+    HPDF_Font _font;
+    HPDF_Page _page;
     
-    char filename[256];
+    char _filename[256];
 public:
     HaruPDF(char filename[256]);
     ~HaruPDF();

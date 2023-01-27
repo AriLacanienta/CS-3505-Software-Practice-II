@@ -12,10 +12,10 @@
 
 
 Spiral::Spiral(double centerX, double centerY, double startingAngle, double scalingFactor) 
-    : centerX { centerX }, 
-    centerY { centerY }, 
-    currentAngle { std::abs(startingAngle) }, // Enforce minimum starting radius (angle?) to preserve the look of the text
-    scalingFactor { scalingFactor } 
+    : _centerX { centerX }, 
+    _centerY { centerY }, 
+    _currentAngle { std::abs(startingAngle) }, // Enforce minimum starting radius (angle?) to preserve the look of the text
+    _scalingFactor { scalingFactor } 
 {
 
 };
@@ -25,8 +25,8 @@ Spiral::Spiral(double centerX, double centerY, double startingAngle, double scal
  * Increase the internal angle by a given amount
 */
 Spiral& Spiral::operator+=(double angle){
-    this->currentAngle += angle;
-    this->currentRadius += 1/angle;
+    this->_currentAngle += angle;
+    this->_currentRadius += 1/angle;
     return *this;
 };
 
@@ -35,7 +35,7 @@ Spiral& Spiral::operator+=(double angle){
  * 
 */
 double Spiral::getSpiralX() {
-    return centerX + cos(currentAngle) * currentRadius;
+    return _centerX + cos(_currentAngle) * _currentRadius;
 };
 
 
@@ -43,7 +43,7 @@ double Spiral::getSpiralX() {
  * 
 */
 double Spiral::getSpiralY() {
-    return centerY + sin(currentAngle) * currentRadius;
+    return _centerY + sin(_currentAngle) * _currentRadius;
 };
 
 
@@ -51,7 +51,7 @@ double Spiral::getSpiralY() {
  * 
 */
 double Spiral::getSpiralAngle() {
-    return this->currentAngle;
+    return this->_currentAngle;
 };
 
 

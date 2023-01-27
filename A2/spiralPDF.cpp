@@ -44,6 +44,7 @@ int main (int argc, char *argv[]) {
     /* text along a circle */
     angle2 = 180;
 
+/*
     // Place characters one at a time on the page.
     for (i = 0; i < strlen (SAMP_TXT); i++) {
         float x;
@@ -65,9 +66,10 @@ int main (int argc, char *argv[]) {
         document.placeLetter(SAMP_TXT[i], spiral.getSpiralX(), spiral.getSpiralY(), rad1);
 
         angle2 -= 10.0; // change the angle around the circle
-        spiral += 1.0;
+        spiral += 5.0;
 
     }
+*/
         document.saveDocument();
 
     return 0;

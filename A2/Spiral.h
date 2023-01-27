@@ -3,8 +3,8 @@
 
 class Spiral {
     private:
-        double centerX, centerY, currentAngle, scalingFactor;
-        double currentRadius;
+        double _centerX, _centerY, _currentAngle, _scalingFactor;
+        double _currentRadius;
 
     public:
     
