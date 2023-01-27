@@ -1,0 +1,9 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile",
+            "command": "cd A2 && /usr/bin/make"
+        }
+    ]
+}

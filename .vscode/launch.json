@@ -6,7 +6,7 @@
         "type": "cppdbg",
         "request": "launch",
         "program": "${workspaceFolder}/A2/spiralPDF",
-        "args": ["Testing from launch.json"],
+        "args": ["Testing from launch.json You are a worm through time. The thunder song distorts you. Happiness comes."],
         "stopAtEntry": false,
         "cwd": "${fileDirname}",
         "environment": [],
