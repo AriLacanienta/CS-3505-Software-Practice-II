@@ -1,0 +1,5 @@
+make test -f /workspaces/CS-3505/A2/Makefile -C /workspaces/CS-3505/A2/ --dry-run --keep-going --print-directory
+make: Entering directory '/workspaces/CS-3505/A2'
+./spiralPDF "Testing from Makefile"
+make: Leaving directory '/workspaces/CS-3505/A2'
+ 

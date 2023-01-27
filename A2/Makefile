@@ -1,19 +1,28 @@
+# Compiler settings
+CC = g++ -g -Wall
 
-default: spiralPDF
+# Library paths
+LIBHARU = ../libharu
 
-spiralPDF: spiralPDF.o Spiral.o HaruPDF.o
-	g++ -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L../libharu/src/ -lhpdfs -lz
+all: spiralPDF.o Spiral.o HaruPDF.o
+	$(CC) -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L $(LIBHARU)/src/ -lhpdfs -lz
 
 spiralPDF.o: spiralPDF.cpp
-	g++ -c spiralPDF.cpp
+	$(CC) -c spiralPDF.cpp -I $(LIBHARU)/include
 
 Spiral.o: Spiral.cpp
-	g++ -c Spiral.cpp
+	$(CC) -c Spiral.cpp
 
 HaruPDF.o: HaruPDF.cpp
-	g++ -c HaruPDF.cpp -I../libharu/include/
+	$(CC) -c HaruPDF.cpp -I $(LIBHARU)/include/
 
 test: spiralPDF
+	./spiralPDF "Testing from Makefile"
 
-clean:
-	rm spiralPDF *.o
+clean: 
+	rm *.o spiralPDF
+
+rebuild: clean all
+
+example: pdfExample.cpp
+	$(CC) -I $(LIBHARU)/include/ -o pdfExample pdfExample.cpp -L $(LIBHARU)/src/ -lhpdfs -lz

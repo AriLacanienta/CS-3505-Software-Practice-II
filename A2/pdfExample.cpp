@@ -80,7 +80,8 @@ int main (int argc, char **argv)
         // on the page. The cos/sin stuff is actually defining a 2D rotation
         // matrix.
         HPDF_Page_SetTextMatrix(page,
-                                cos(rad1), sin(rad1), -sin(rad1), cos(rad1),
+                                cos(rad1),  sin(rad1),
+                                -sin(rad1), cos(rad1),
                                 x, y);
 
         // C-style strings are null-terminated. The last character must a 0.
