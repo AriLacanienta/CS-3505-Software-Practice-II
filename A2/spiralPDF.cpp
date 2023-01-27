@@ -39,14 +39,14 @@ int main (int argc, char *argv[]) {
     const char* SAMP_TXT = "The quick brown fox jumps over the lazy dog. We need more text to test a spiral. Maybe the radians needs to increase with smaller radius. ";
     
     HaruPDF document(filename);;
-    Spiral spiral(0, 0, 0, 5.0);
+    Spiral spiral(210, 300, 0, 2.0);
 
     /* text along a circle */
     angle2 = 180;
 
-/*
+
     // Place characters one at a time on the page.
-    for (i = 0; i < strlen (SAMP_TXT); i++) {
+    for (i = 0; i < strlen (inputText); i++) {
         float x;
         float y;
         // rad1 determines the angle of the letter on the page. rad2 is how far
@@ -63,13 +63,15 @@ int main (int argc, char *argv[]) {
         x = 210 + cos(rad2) * (-10)*rad2;
         y = 300 + sin(rad2) * (-10)*rad2;
 
-        document.placeLetter(SAMP_TXT[i], spiral.getSpiralX(), spiral.getSpiralY(), rad1);
+        double ang = spiral.getSpiralAngle() * (M_PI / 180);
+
+        document.placeLetter(inputText[i], spiral.getSpiralX(), spiral.getSpiralY(), ang);
 
         angle2 -= 10.0; // change the angle around the circle
-        spiral += 5.0;
+        spiral += 10.0;
 
     }
-*/
+
         document.saveDocument();
 
     return 0;

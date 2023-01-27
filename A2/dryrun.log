@@ -1,5 +1,6 @@
 make test -f /workspaces/CS-3505/A2/Makefile -C /workspaces/CS-3505/A2/ --dry-run --keep-going --print-directory
 make: Entering directory '/workspaces/CS-3505/A2'
-./spiralPDF "Testing from Makefile"
+g++ -g -Wall -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L ../libharu/src/ -lhpdfs -lz
+./spiralPDF "You are a worm through time. The thunder song distorts you. White pearls, but yellow and red in the eye"
 make: Leaving directory '/workspaces/CS-3505/A2'
  

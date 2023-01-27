@@ -6,7 +6,7 @@ make all -f /workspaces/CS-3505/A2/Makefile -C /workspaces/CS-3505/A2/ --print-d
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jan 27 16:39:36 2023
+# Make data base, printed on Fri Jan 27 20:08:38 2023
 
 # Variables
 
@@ -162,14 +162,15 @@ CC = g++ -g -Wall
 
 # Not a target:
 HaruPDF.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2023-01-27 19:12:17.631524981
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 /workspaces/CS-3505/A2/Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-27 16:38:59.2981898
+#  Last modified 2023-01-27 20:08:24.313921349
 #  File has been updated.
 #  Successfully updated.
 
@@ -181,8 +182,9 @@ pdfExample.cpp:
 
 Spiral.o: Spiral.cpp
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2023-01-27 20:05:52.232283058
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 14):
 	$(CC) -c Spiral.cpp
 
@@ -190,40 +192,21 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 23):
-	rm *.o spiralPDF
+#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 26):
+	rm *.o spiralPDF spiralPDF.pdf
 
 # Not a target:
 spiralPDF.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-27 16:38:50.208193686
+#  Last modified 2023-01-27 20:07:58.711012698
 #  File has been updated.
 #  Successfully updated.
 
 spiralPDF.o: spiralPDF.cpp
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
+#  Last modified 2023-01-27 20:08:04.140641745
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := spiralPDF.o
-# automatic
-# * := 
-# automatic
-# < := spiralPDF.cpp
-# automatic
-# + := spiralPDF.cpp
-# automatic
-# % := 
-# automatic
-# ^ := spiralPDF.cpp
-# automatic
-# ? := spiralPDF.cpp
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+#  Successfully updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 11):
 	$(CC) -c spiralPDF.cpp -I $(LIBHARU)/include
 
@@ -231,50 +214,76 @@ spiralPDF.o: spiralPDF.cpp
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 all: spiralPDF.o Spiral.o HaruPDF.o
 #  Command line target.
 #  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# * := 
+# automatic
+# < := spiralPDF.o
+# automatic
+# + := spiralPDF.o Spiral.o HaruPDF.o
+# automatic
+# % := 
+# automatic
+# ^ := spiralPDF.o Spiral.o HaruPDF.o
+# automatic
+# ? := spiralPDF.o Spiral.o HaruPDF.o
+# automatic
+# | := 
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 8):
 	$(CC) -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L $(LIBHARU)/src/ -lhpdfs -lz
 
-test: spiralPDF
+test: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 20):
-	./spiralPDF "Testing from Makefile"
+	./spiralPDF "You are a worm through time. The thunder song distorts you. White pearls, but yellow and red in the eye"
 
 rebuild: clean all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-HaruPDF.o: HaruPDF.cpp
+test2: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 23):
+	./spiralPDF ".........................................................................................................................................................."
+
+HaruPDF.o: HaruPDF.cpp
+#  Implicit rule search has not been done.
+#  Last modified 2023-01-27 20:01:50.359682253
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 17):
 	$(CC) -c HaruPDF.cpp -I $(LIBHARU)/include/
 
 # Not a target:
 Spiral.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2023-01-27 20:05:44.782255126
+#  File has been updated.
+#  Successfully updated.
 
 example: pdfExample.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 28):
+ 
+#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 31):
 	$(CC) -I $(LIBHARU)/include/ -o pdfExample pdfExample.cpp -L $(LIBHARU)/src/ -lhpdfs -lz
 
 # Not a target:
@@ -283,26 +292,20 @@ example: pdfExample.cpp
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-spiralPDF:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/41=0%
+# Load=16/1024=2%, Rehash=0, Collisions=0/42=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 231 B / avg = 12 B
-# current buf: size = 8162 B / used = 231 B / count = 19 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 227 B / avg = 11 B
+# current buf: size = 8162 B / used = 227 B / count = 19 / avg = 11 B
 
-# strcache performance: lookups = 37 / hit rate = 48%
+# strcache performance: lookups = 40 / hit rate = 52%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=0/37=0%
-# Finished Make data base on Fri Jan 27 16:39:36 2023
+# Load=19/8192=0%, Rehash=0, Collisions=0/40=0%
+# Finished Make data base on Fri Jan 27 20:08:38 2023
 
  

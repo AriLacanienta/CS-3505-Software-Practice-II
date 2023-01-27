@@ -11,8 +11,6 @@
  * It is provided "as is" without express or implied warranty.
  *
  * Modified by David Johnson, University of Utah, 2016.
- * 
- * Modified by Ari Lanienta, University of Utah, 2023.
  */
 
 #include <stdlib.h>
@@ -73,15 +71,14 @@ int main (int argc, char **argv)
 
         // The position of the character depends on the center point
         // plus the angle and the radius.
-        x = 210 + cos(rad2) * (-10)*rad2;
-        y = 300 + sin(rad2) * (-10)*rad2;
+        x = 210 + cos(rad2) * 150;
+        y = 300 + sin(rad2) * 150;
 
         // This ugly function defines where any following text will be placed
         // on the page. The cos/sin stuff is actually defining a 2D rotation
         // matrix.
         HPDF_Page_SetTextMatrix(page,
-                                cos(rad1),  sin(rad1),
-                                -sin(rad1), cos(rad1),
+                                cos(rad1), sin(rad1), -sin(rad1), cos(rad1),
                                 x, y);
 
         // C-style strings are null-terminated. The last character must a 0.

@@ -15,6 +15,9 @@
 // DEBUG
 #include <iostream>
 
+/**
+ * 
+*/
 HaruPDF::HaruPDF(char filename[256])
 {
     strcpy(_filename, filename);
@@ -23,7 +26,6 @@ HaruPDF::HaruPDF(char filename[256])
     /* add a new page object. */
     _page = HPDF_AddPage (_pdf);
     HPDF_Page_SetSize (_page, HPDF_PAGE_SIZE_A5, HPDF_PAGE_PORTRAIT);
-    // print_grid  (_pdf, _page);
     
     HPDF_Page_BeginText (_page);
     // Set the font	
@@ -33,6 +35,10 @@ HaruPDF::HaruPDF(char filename[256])
     HPDF_Page_SetFontAndSize (_page, _font, 30);
 }
 
+
+/**
+ * 
+*/
 void HaruPDF::placeLetter(char letter, double xpos, double ypos, double rot) {
 // This ugly function defines where any following text will be placed
         // on the page. The cos/sin stuff is actually defining a 2D rotation
@@ -48,19 +54,38 @@ void HaruPDF::placeLetter(char letter, double xpos, double ypos, double rot) {
     return;
 }
 
+
+/**
+ * 
+*/
 void HaruPDF::placeLetter(char letter, double xpos, double ypos) {
     placeLetter(letter, xpos, ypos, 0);
     return;
 }
 
-void HaruPDF::saveDocument() {
+
+
+/**
+ * 
+*/
+void HaruPDF::saveDocument(char filename[256]) {
     HPDF_Page_EndText (_page);
-    if (HPDF_SaveToFile (_pdf, _filename) == HPDF_OK) {
+    // DEBUG
+    if (HPDF_SaveToFile (_pdf, filename) == HPDF_OK) {
         std::cout << _filename << " saved." << std::endl;
     }
-
+}
+/**
+ * 
+*/
+void HaruPDF::saveDocument() {
+    saveDocument(_filename);
 }
 
+
+/**
+ * 
+*/
 HaruPDF::~HaruPDF()
 {
     /* clean up */

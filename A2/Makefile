@@ -16,11 +16,14 @@ Spiral.o: Spiral.cpp
 HaruPDF.o: HaruPDF.cpp
 	$(CC) -c HaruPDF.cpp -I $(LIBHARU)/include/
 
-test: spiralPDF
-	./spiralPDF "Testing from Makefile"
+test: all
+	./spiralPDF "You are a worm through time. The thunder song distorts you. White pearls, but yellow and red in the eye"
+
+test2: all
+	./spiralPDF ".........................................................................................................................................................."
 
 clean: 
-	rm *.o spiralPDF
+	rm *.o spiralPDF spiralPDF.pdf
 
 rebuild: clean all
 

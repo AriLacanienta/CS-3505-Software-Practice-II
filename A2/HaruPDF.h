@@ -18,6 +18,7 @@ public:
 
     void placeLetter(char letter, double xpos, double ypos, double angle);
     void placeLetter(char letter, double xpos, double ypos);
+    void saveDocument(char filename[256]);
     void saveDocument();
 };
 
