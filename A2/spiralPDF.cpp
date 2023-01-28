@@ -29,38 +29,27 @@ int main (int argc, char *argv[]) {
     char inputText[256];
     strcpy(inputText, argv[1]);
 
+    // DEBUG
     std::cout << inputText << std::endl;
-
-    float angle2;
-    float rad1;
-    float rad2;
-    unsigned int i;
-
-    const char* SAMP_TXT = "The quick brown fox jumps over the lazy dog. We need more text to test a spiral. Maybe the radians needs to increase with smaller radius. ";
     
     HaruPDF document(filename);;
-    Spiral spiral(210, 300, 90, 2.0);
-
-    /* text along a circle */
-    angle2 = 180;
-
-    int deltaAngle = 25;
-
+    Spiral spiral(210, 300, 360, 0.225);
 
     // Place characters one at a time on the page.
-    for (i = 0; i < strlen (inputText); i++) {
+    for (unsigned int i = 0; i < strlen (inputText); i++) {
 
-        double ang = spiral.getSpiralAngle() * (180 / M_PI);
+        document.placeLetter(
+            inputText[i],
+            spiral.getSpiralX(), spiral.getSpiralY(), 
+            (M_PI - spiral.getSpiralAngle() * (M_PI / 180)) - M_PI_2
+            );
 
-        document.placeLetter(inputText[i], spiral.getSpiralX(), spiral.getSpiralY(), -spiral.getSpiralAngle() + M_PI_2);
 
-        angle2 -= 10.0; // change the angle around the circle
+        double deltaAngle = 10;
         spiral += deltaAngle;
-        // deltaAngle -= 1;
-
     }
 
-        document.saveDocument();
+    document.saveDocument();
 
     return 0;
 }

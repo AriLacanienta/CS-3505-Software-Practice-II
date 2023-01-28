@@ -25,6 +25,9 @@ test2: all
 test3: all
 	./spiralPDF "Alllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
 
+test4: all
+	./spiralPDF "Allllllllllllll"
+
 clean: 
 	rm *.o spiralPDF spiralPDF.pdf
 

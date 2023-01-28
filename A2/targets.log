@@ -6,12 +6,12 @@ make all -f /workspaces/CS-3505/A2/Makefile -C /workspaces/CS-3505/A2/ --print-d
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jan 27 21:26:35 2023
+# Make data base, printed on Sat Jan 28 21:51:37 2023
 
 # Variables
 
 # environment
-REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-e82e7d0b11b0ff6c39efca88fbc8a2b4b2cd1d57.sock"]
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-5b46d882051bdbfbf177a66223cc04c065f257bc.sock"]
 # environment
 LC_ALL = C
 # environment
@@ -31,7 +31,9 @@ PWD = /workspaces/CS-3505
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
+ 
 HOSTNAME = 8144446840cd
+ 
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -57,13 +59,14 @@ LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 MFLAGS = -pqrRw
 # environment
-SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-e82e7d0b11b0ff6c39efca88fbc8a2b4b2cd1d57.sock
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-5b46d882051bdbfbf177a66223cc04c065f257bc.sock
 # default
 .SHELLFLAGS := -c
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from '/workspaces/CS-3505/A2/Makefile', line 1)
 MAKEFILE_LIST := /workspaces/CS-3505/A2/Makefile
+ 
 # automatic
 @F = $(notdir $@)
 # automatic
@@ -89,13 +92,13 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
+PATH = /vscode/vscode-server/bin/linux-x64/97dec172d3256f8ca4bfb2143f3f76b503ca0534/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
 # default
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
 # environment
-REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-e82e7d0b11b0ff6c39efca88fbc8a2b4b2cd1d57.sock
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-5b46d882051bdbfbf177a66223cc04c065f257bc.sock
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
@@ -125,7 +128,7 @@ _ = /usr/bin/cat
 # makefile (from '/workspaces/CS-3505/A2/Makefile', line 5)
 LIBHARU = ../libharu
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-203efb0c-9f52-4e75-85b9-15c42d72ff27.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4d99c916-6b1d-433a-9189-908b14c86bdd.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -170,7 +173,7 @@ HaruPDF.cpp:
 # Not a target:
 /workspaces/CS-3505/A2/Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-27 21:26:24.570933139
+#  Last modified 2023-01-28 21:51:32.466161381
 #  File has been updated.
 #  Successfully updated.
 
@@ -182,7 +185,7 @@ pdfExample.cpp:
 
 Spiral.o: Spiral.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2023-01-27 20:59:40.967630832
+#  Last modified 2023-01-28 21:46:12.916165115
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 14):
@@ -192,19 +195,26 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 29):
+#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 32):
 	rm *.o spiralPDF spiralPDF.pdf
 
 # Not a target:
 spiralPDF.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-27 21:26:06.799897455
+#  Last modified 2023-01-28 21:50:45.36616116
 #  File has been updated.
 #  Successfully updated.
 
+test4: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 29):
+	./spiralPDF "Allllllllllllll"
+
 spiralPDF.o: spiralPDF.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2023-01-27 21:26:11.399906301
+#  Last modified 2023-01-28 21:50:47.27616119
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 11):
@@ -281,8 +291,7 @@ HaruPDF.o: HaruPDF.cpp
 # Not a target:
 Spiral.cpp:
 #  Implicit rule search has been done.
- 
-#  Last modified 2023-01-27 20:59:34.816512038
+#  Last modified 2023-01-28 21:46:09.126165041
 #  File has been updated.
 #  Successfully updated.
 
@@ -290,7 +299,7 @@ example: pdfExample.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 34):
+#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 37):
 	$(CC) -I $(LIBHARU)/include/ -o pdfExample pdfExample.cpp -L $(LIBHARU)/src/ -lhpdfs -lz
 
 # Not a target:
@@ -300,19 +309,19 @@ example: pdfExample.cpp
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/44=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 233 B / avg = 11 B
-# current buf: size = 8162 B / used = 233 B / count = 20 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 239 B / avg = 11 B
+# current buf: size = 8162 B / used = 239 B / count = 21 / avg = 11 B
 
-# strcache performance: lookups = 43 / hit rate = 53%
+# strcache performance: lookups = 46 / hit rate = 54%
 # hash-table stats:
-# Load=20/8192=0%, Rehash=0, Collisions=0/43=0%
-# Finished Make data base on Fri Jan 27 21:26:35 2023
+# Load=21/8192=0%, Rehash=0, Collisions=0/46=0%
+# Finished Make data base on Sat Jan 28 21:51:37 2023
 
  

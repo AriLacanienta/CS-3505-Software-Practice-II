@@ -16,10 +16,10 @@
 Spiral::Spiral(double centerX, double centerY, double startingAngle, double scalingFactor) 
     : _centerX { centerX }, 
     _centerY { centerY }, 
-    _currentAngle { abs(startingAngle) * (M_PI / 180) }, 
+    _currentAngle { abs(startingAngle) + 90 }, 
     _scalingFactor { scalingFactor } 
 {
-    _currentRadius = 45.0;
+    _currentRadius = (_currentAngle * _scalingFactor);
 };
 
 
@@ -27,8 +27,8 @@ Spiral::Spiral(double centerX, double centerY, double startingAngle, double scal
  * Increase the internal angle by a given degree amount
 */
 Spiral& Spiral::operator+=(double angle){
-    this->_currentAngle += angle  * (M_PI / 180);
-    this->_currentRadius += _scalingFactor;
+    this->_currentAngle += angle;
+    this->_currentRadius = _currentAngle * _scalingFactor;
     return *this;
 };
 
@@ -37,7 +37,7 @@ Spiral& Spiral::operator+=(double angle){
  * 
 */
 double Spiral::getSpiralX() {
-    return _centerX + -cos(_currentAngle) * _currentRadius;
+    return _centerX + -cos(_currentAngle * (M_PI/180)) * _currentRadius;
 };
 
 
@@ -45,7 +45,7 @@ double Spiral::getSpiralX() {
  * 
 */
 double Spiral::getSpiralY() {
-    return _centerY + sin(_currentAngle) * _currentRadius;
+    return _centerY + sin(_currentAngle * (M_PI/180)) * _currentRadius;
 };
 
 
