@@ -16,9 +16,6 @@
 #include "HaruPDF.h"
 #include "Spiral.h"
 
-// DEBUG:
-#include <iostream>
-
 int main (int argc, char *argv[]) {    
     
     // name output pdf after program name
@@ -26,26 +23,32 @@ int main (int argc, char *argv[]) {
     strcpy(filename, argv[0]);
     strcat(filename, ".pdf");
 
-    char inputText[256];
+    char inputText[2048];
     strcpy(inputText, argv[1]);
-
-    // DEBUG
-    std::cout << inputText << std::endl;
     
     HaruPDF document(filename);;
-    Spiral spiral(210, 300, 360, 0.225);
+    const double CENTER_X = 210;
+    const double CENTER_Y = 300;
+    Spiral spiral(CENTER_X, CENTER_Y, 360, 0.225);
 
+    double deltaAngle;
     // Place characters one at a time on the page.
     for (unsigned int i = 0; i < strlen (inputText); i++) {
 
+        /* Calculate the rotation of each letter by getting the complement of
+            the angle, then convert it to Radians */
         document.placeLetter(
             inputText[i],
-            spiral.getSpiralX(), spiral.getSpiralY(), 
-            (M_PI - spiral.getSpiralAngle() * (M_PI / 180)) - M_PI_2
+            spiral.getSpiralX(), spiral.getSpiralY(),
+            (360 - spiral.getSpiralAngle() ) * (M_PI / 180)
             );
 
+        // Limit deltaAngle based on how far we are from the center.
+        double radius = sqrt(
+            pow(spiral.getSpiralX() - CENTER_X, 2) + 
+            pow(spiral.getSpiralY() - CENTER_Y, 2));
 
-        double deltaAngle = 10;
+        deltaAngle = 1000/radius;
         spiral += deltaAngle;
     }
 
