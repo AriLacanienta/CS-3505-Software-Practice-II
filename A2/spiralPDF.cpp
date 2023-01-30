@@ -47,7 +47,10 @@ int main (int argc, char *argv[]) {
         double radius = sqrt(
             pow(spiral.getSpiralX() - CENTER_X, 2) + 
             pow(spiral.getSpiralY() - CENTER_Y, 2));
-
+        
+        if (radius <= 1e-4)
+            radius = 1;
+            
         deltaAngle = 1000/radius;
         spiral += deltaAngle;
     }
