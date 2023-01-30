@@ -6,12 +6,12 @@ make all -f /workspaces/CS-3505/A2/Makefile -C /workspaces/CS-3505/A2/ --print-d
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jan 30 22:47:09 2023
+# Make data base, printed on Mon Jan 30 23:31:33 2023
 
 # Variables
 
 # environment
-REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-4ada5d7113691d1261d3443671044ff282464dc2.sock"]
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-b173391fa4a9e028a2745f9cb47412fd648268c8.sock"]
 # environment
 LC_ALL = C
 # environment
@@ -57,7 +57,7 @@ LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 MFLAGS = -pqrRw
 # environment
-SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-4ada5d7113691d1261d3443671044ff282464dc2.sock
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-b173391fa4a9e028a2745f9cb47412fd648268c8.sock
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -89,13 +89,13 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
+PATH = /vscode/vscode-server/bin/linux-x64/97dec172d3256f8ca4bfb2143f3f76b503ca0534/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
 # default
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
 # environment
-REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-4ada5d7113691d1261d3443671044ff282464dc2.sock
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-b173391fa4a9e028a2745f9cb47412fd648268c8.sock
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
@@ -125,7 +125,7 @@ _ = /usr/bin/cat
 # makefile (from '/workspaces/CS-3505/A2/Makefile', line 15)
 LIBHARU = ../libharu
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-142173dc-9314-4358-838d-6fae2a72efc3.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bc12b19c-6228-4682-80ec-6f1168eeb90e.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -176,10 +176,9 @@ test3_orientation: all
 
 # Not a target:
 HaruPDF.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2023-01-30 22:43:02.831866436
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 /workspaces/CS-3505/A2/Makefile:
@@ -190,10 +189,9 @@ HaruPDF.cpp:
 
 # Not a target:
 HaruPDF.h:
-#  Implicit rule search has been done.
-#  Last modified 2023-01-30 22:42:26.178543329
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 test2_spiral: all
 #  Implicit rule search has not been done.
@@ -204,9 +202,8 @@ test2_spiral: all
 
 Spiral.o: Spiral.cpp Spiral.h
 #  Implicit rule search has not been done.
-#  Last modified 2023-01-30 22:43:13.221629918
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 24):
 	$(CC) -c Spiral.cpp
 
@@ -220,15 +217,34 @@ clean:
 # Not a target:
 spiralPDF.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-30 22:15:40.156568395
+#  Last modified 2023-01-30 23:20:01.817701628
 #  File has been updated.
 #  Successfully updated.
 
 spiralPDF.o: spiralPDF.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2023-01-30 22:15:42.466570626
+#  Implicit/static pattern stem: ''
+#  Last modified 2023-01-30 23:19:47.90625563
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := spiralPDF.o
+# automatic
+# * := 
+# automatic
+# < := spiralPDF.cpp
+# automatic
+# + := spiralPDF.cpp
+# automatic
+# % := 
+# automatic
+# ^ := spiralPDF.cpp
+# automatic
+# ? := spiralPDF.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 21):
 	$(CC) -c spiralPDF.cpp -I $(LIBHARU)/include
 
@@ -241,38 +257,19 @@ spiralPDF.o: spiralPDF.cpp
 all: spiralPDF.o Spiral.o HaruPDF.o
 #  Command line target.
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# * := 
-# automatic
-# < := spiralPDF.o
-# automatic
-# + := spiralPDF.o Spiral.o HaruPDF.o
-# automatic
-# % := 
- 
-# automatic
-# ^ := spiralPDF.o Spiral.o HaruPDF.o
-# automatic
-# ? := spiralPDF.o Spiral.o HaruPDF.o
-# automatic
-# | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 18):
 	$(CC) -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L $(LIBHARU)/src/ -lhpdfs -lz
 
 # Not a target:
 Spiral.h:
-#  Implicit rule search has been done.
-#  Last modified 2023-01-30 22:27:27.01117398
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 test: all
 #  Implicit rule search has not been done.
@@ -280,6 +277,7 @@ test: all
 #  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 35):
 	./spiralPDF "You are a worm through time. The thunder song distorts you. Happiness comes. White pearls, but yellow and red in the eye."
+ 
 
 rebuild: clean all
 #  Implicit rule search has not been done.
@@ -288,18 +286,16 @@ rebuild: clean all
 
 HaruPDF.o: HaruPDF.cpp HaruPDF.h
 #  Implicit rule search has not been done.
-#  Last modified 2023-01-30 22:43:13.361623983
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 27):
 	$(CC) -c HaruPDF.cpp -I $(LIBHARU)/include/
 
 # Not a target:
 Spiral.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2023-01-28 21:57:02.99616254
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -321,6 +317,6 @@ Spiral.cpp:
 # strcache performance: lookups = 45 / hit rate = 53%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/45=0%
-# Finished Make data base on Mon Jan 30 22:47:09 2023
+# Finished Make data base on Mon Jan 30 23:31:33 2023
 
  
