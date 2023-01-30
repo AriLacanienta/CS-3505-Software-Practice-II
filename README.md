@@ -8,12 +8,15 @@
 ### Overview
 This project generates celular autonoma based on rules specified by an 8 digit binary number. Generation size and number of generations is also editable.
 
-Running the program with 126, 129, and 117 have some pretty cool results.
+Running the program with 126, 129, and 117 has some pretty cool results.
 
 ## Assignment 02 - Facade
+/A2/spiralPDF
 
 ### Overview
-I'm very interested to start getting into Gang of Four stuff. I originally stumbled accross the GoF when I was studying parse trees for my SQR language server.
+This project generates a pdf that displays a user's text in the shape of a spiral.
+
+Uses the Facade design pattern. I'm very interested to start getting into Gang of Four stuff. I originally stumbled accross the GoF when I was studying parse trees for my SQR language server.
 
 
 ## Lab01
@@ -21,3 +24,6 @@ Lab #1 was originally completed in a different environment and contained no sign
 
 ## Lab02
 Lab #2 should likewise be considered lost to time.
+
+## Lab03
+Basic makefile and static library practice

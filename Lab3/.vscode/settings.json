@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/workspaces/CS-3505/Lab3",
+            "binaryPath": "/workspaces/CS-3505/Lab3/Main",
+            "binaryArgs": []
+        }
+    ]
+}
