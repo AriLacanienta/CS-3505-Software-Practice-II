@@ -22,16 +22,16 @@ int main (int argc, char *argv[]) {
     char filename[256];
     strcpy(filename, argv[0]);
     strcat(filename, ".pdf");
+    HaruPDF document(filename);
 
     char inputText[2048];
     strcpy(inputText, argv[1]);
     
-    HaruPDF document(filename);;
     const double CENTER_X = 210;
     const double CENTER_Y = 300;
     Spiral spiral(CENTER_X, CENTER_Y, 360, 0.225);
-
     double deltaAngle;
+
     // Place characters one at a time on the page.
     for (unsigned int i = 0; i < strlen (inputText); i++) {
 

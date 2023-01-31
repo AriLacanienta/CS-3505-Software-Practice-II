@@ -35,7 +35,7 @@ HaruPDF::HaruPDF(char filename[256])
 
 /**
  * Places a letter on the page at a given x and y position with a given 
- * orientation
+ * rotation (in radians)
 */
 void HaruPDF::placeLetter(char letter, double xpos, double ypos, double rot) {
 
@@ -53,7 +53,7 @@ void HaruPDF::placeLetter(char letter, double xpos, double ypos, double rot) {
 
 /**
  * Places a letter on the page at a given x and y position with a default
- * orientation
+ * upright rotation
 */
 void HaruPDF::placeLetter(char letter, double xpos, double ypos) {
     placeLetter(letter, xpos, ypos, 0);

@@ -21,7 +21,7 @@ Spiral::Spiral(double centerX, double centerY, double startingAngle, double scal
     _scalingFactor { scalingFactor } 
 {
     _currentRadius = (_currentAngle * _scalingFactor);
-};
+}
 
 
 /**
@@ -31,7 +31,7 @@ Spiral& Spiral::operator+=(double angle){
     this->_currentAngle += angle;
     this->_currentRadius = _currentAngle * _scalingFactor;
     return *this;
-};
+}
 
 
 /**
@@ -39,7 +39,7 @@ Spiral& Spiral::operator+=(double angle){
 */
 double Spiral::getSpiralX() {
     return _centerX + sin(_currentAngle * (M_PI/180)) * _currentRadius;
-};
+}
 
 
 /**
@@ -47,7 +47,7 @@ double Spiral::getSpiralX() {
 */
 double Spiral::getSpiralY() {
     return _centerY + cos(_currentAngle * (M_PI/180)) * _currentRadius;
-};
+}
 
 
 /**
@@ -55,7 +55,7 @@ double Spiral::getSpiralY() {
 */
 double Spiral::getSpiralAngle() {
     return this->_currentAngle;
-};
+}
 
 
 
