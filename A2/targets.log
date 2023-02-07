@@ -1,4 +1,5 @@
 make all -f /workspaces/CS-3505/A2/Makefile -C /workspaces/CS-3505/A2/ --print-data-base --no-builtin-variables --no-builtin-rules --question
+# make: Entering directory '/workspaces/CS-3505/A2'
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,16 +7,16 @@ make all -f /workspaces/CS-3505/A2/Makefile -C /workspaces/CS-3505/A2/ --print-d
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jan 30 23:31:33 2023
+# Make data base, printed on Tue Feb  7 18:30:19 2023
 
 # Variables
 
 # environment
-REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-b173391fa4a9e028a2745f9cb47412fd648268c8.sock"]
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-d9ad10ba2c58b3e5d6aaf58596a8480681a16c76.sock"]
 # environment
 LC_ALL = C
 # environment
-VSCODE_CWD = /vscode/vscode-server/bin/linux-x64/97dec172d3256f8ca4bfb2143f3f76b503ca0534
+VSCODE_CWD = /vscode/vscode-server/bin/linux-x64/e2816fe719a4026ffa1ee0189dc89bdfdbafb164
 # default
 MAKE_COMMAND := make
 # environment
@@ -31,7 +32,7 @@ PWD = /workspaces/CS-3505
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-HOSTNAME = 8144446840cd
+HOSTNAME = 97a22575b0f6
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -52,16 +53,21 @@ CURDIR := /workspaces/CS-3505/A2
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
 MFLAGS = -pqrRw
 # environment
-SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-b173391fa4a9e028a2745f9cb47412fd648268c8.sock
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-d9ad10ba2c58b3e5d6aaf58596a8480681a16c76.sock
 # default
 .SHELLFLAGS := -c
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 # makefile (from '/workspaces/CS-3505/A2/Makefile', line 1)
 MAKEFILE_LIST := /workspaces/CS-3505/A2/Makefile
 # automatic
@@ -89,13 +95,13 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /vscode/vscode-server/bin/linux-x64/97dec172d3256f8ca4bfb2143f3f76b503ca0534/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
+PATH = /vscode/vscode-server/bin/linux-x64/e2816fe719a4026ffa1ee0189dc89bdfdbafb164/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
 # default
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
 # environment
-REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-b173391fa4a9e028a2745f9cb47412fd648268c8.sock
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-d9ad10ba2c58b3e5d6aaf58596a8480681a16c76.sock
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
@@ -111,9 +117,9 @@ LS_COLORS =
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-BROWSER = /vscode/vscode-server/bin/linux-x64/97dec172d3256f8ca4bfb2143f3f76b503ca0534/bin/helpers/browser.sh
+BROWSER = /vscode/vscode-server/bin/linux-x64/e2816fe719a4026ffa1ee0189dc89bdfdbafb164/bin/helpers/browser.sh
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := spiralPDF
 # environment
 USER = vscode
 # default
@@ -125,7 +131,7 @@ _ = /usr/bin/cat
 # makefile (from '/workspaces/CS-3505/A2/Makefile', line 15)
 LIBHARU = ../libharu
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bc12b19c-6228-4682-80ec-6f1168eeb90e.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7f2f4d57-cd18-4107-92e9-7abcb05f59aa.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -143,7 +149,7 @@ SUFFIXES :=
 # makefile (from '/workspaces/CS-3505/A2/Makefile', line 12)
 CC = g++ -g -Wall
 # variable set hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=1/101=1%
+# Load=67/1024=7%, Rehash=0, Collisions=2/97=2%
 
 # Pattern-specific Variable Values
 
@@ -160,14 +166,14 @@ CC = g++ -g -Wall
 
 # Files
 
-test4_stress: all
+test4_stress: spiralPDF
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 44):
 	./spiralPDF "You are a worm through time. The thunder song distorts you. Happiness comes. White pearls, but yellow and red in the eye. Through a mirror, inverted is made right. Leave your insides by the door. Push the fingers through the surface into the wet. Youve always been the new you. You want this to be true. We stand around you while you dream. You can almost hear our words but you forget. This happens more and more now. You gave us the permission in your regulations. We wait in the stains. The word that describes this is redacted. Repeat the word. The name of the sound. It resonates in your house. After the song, time for applause. We build you till nothing remains. The egg cracks and the truth will emerge out of you. You are home. You remind us of home. You've taken your boss with your boss with you. All hair must be eaten. Under the conceptual reality behind this reality you must want these waves to drag you away. After the song, time for applause. This cliché is death out of time, breaking the first the second the third the fourth wall, the fifth wall, floor; no floor: you fall. How do you say “insane”. Hurts to be happy. An earworm is a tune you can't stop humming in a dream: “baby baby baby yeah”. Just plastic. So, safe and nothing to worry about. Ha ha, funny. The last egg breaks now. The hole in your room is a hole in you. You came and we let you in through the hole in you. You have always been here, the only child. A copy of a copy of a copy. Orange peel. The picture is you holding the picture. When you hear this you will know you're in new you. You want to listen. You want to dream. You want to smile. You want to hurt. You don't want to be."
 
-test3_orientation: all
+test3_orientation: spiralPDF
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -183,7 +189,7 @@ HaruPDF.cpp:
 # Not a target:
 /workspaces/CS-3505/A2/Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-30 22:46:54.05519398
+#  Last modified 2023-02-06 23:53:46.253842018
 #  File has been updated.
 #  Successfully updated.
 
@@ -193,7 +199,7 @@ HaruPDF.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-test2_spiral: all
+test2_spiral: spiralPDF
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -216,35 +222,14 @@ clean:
 
 # Not a target:
 spiralPDF.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2023-01-30 23:20:01.817701628
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 spiralPDF.o: spiralPDF.cpp
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  Last modified 2023-01-30 23:19:47.90625563
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := spiralPDF.o
-# automatic
-# * := 
-# automatic
-# < := spiralPDF.cpp
-# automatic
-# + := spiralPDF.cpp
-# automatic
-# % := 
-# automatic
-# ^ := spiralPDF.cpp
-# automatic
-# ? := spiralPDF.cpp
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 21):
 	$(CC) -c spiralPDF.cpp -I $(LIBHARU)/include
 
@@ -254,16 +239,12 @@ spiralPDF.o: spiralPDF.cpp
 #  Modification time never checked.
 #  File has not been updated.
 
-all: spiralPDF.o Spiral.o HaruPDF.o
+# Not a target:
+all:
 #  Command line target.
-#  Implicit rule search has not been done.
+#  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 18):
-	$(CC) -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L $(LIBHARU)/src/ -lhpdfs -lz
+#  File has not been updated.
 
 # Not a target:
 Spiral.h:
@@ -271,15 +252,14 @@ Spiral.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-test: all
+test: spiralPDF
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 35):
 	./spiralPDF "You are a worm through time. The thunder song distorts you. Happiness comes. White pearls, but yellow and red in the eye."
- 
 
-rebuild: clean all
+rebuild: clean spiralPDF
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -297,26 +277,28 @@ Spiral.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-.SUFFIXES:
+spiralPDF: spiralPDF.o Spiral.o HaruPDF.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from '/workspaces/CS-3505/A2/Makefile', line 18):
+	$(CC) -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L $(LIBHARU)/src/ -lhpdfs -lz
 
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/47=0%
+# Load=19/1024=2%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 261 B / avg = 12 B
-# current buf: size = 8162 B / used = 261 B / count = 21 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 271 B / avg = 12 B
+# current buf: size = 8162 B / used = 271 B / count = 22 / avg = 12 B
 
-# strcache performance: lookups = 45 / hit rate = 53%
+# strcache performance: lookups = 44 / hit rate = 50%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/45=0%
-# Finished Make data base on Mon Jan 30 23:31:33 2023
+# Load=22/8192=0%, Rehash=0, Collisions=0/44=0%
+# Finished Make data base on Tue Feb  7 18:30:19 2023
 
+# make: Leaving directory '/workspaces/CS-3505/A2'
  

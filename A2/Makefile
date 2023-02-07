@@ -12,7 +12,7 @@
 CC = g++ -g -Wall
 
 # Library paths
-LIBHARU = ../libharu
+LIBHARU = ../libraries/libharu
 
 spiralPDF: spiralPDF.o Spiral.o HaruPDF.o
 	$(CC) -o spiralPDF spiralPDF.o Spiral.o HaruPDF.o -L $(LIBHARU)/src/ -lhpdfs -lz

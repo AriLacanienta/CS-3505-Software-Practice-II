@@ -1,9 +1,36 @@
 {
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile",
-            "command": "cd A2 && /usr/bin/make"
+            "type": "cppbuild",
+            "label": "make current project",
+            "command": "/usr/bin/make",
+            "args": [
+                "--directory=${fileDirname}",
+                "--file=${fileDirname}/Makefile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
+        },
+        {
+            "type": "cppbuild",
+            "label": "test current project",
+            "command": "/usr/bin/make",
+            "args": [
+                "test",
+                "--directory=${fileDirname}",
+                "--file=${fileDirname}/Makefile"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
         }
     ]
 }

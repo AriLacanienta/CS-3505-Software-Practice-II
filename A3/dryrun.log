@@ -1,0 +1,7 @@
+make TrieTest -f /workspaces/CS-3505/A3/Makefile -C /workspaces/CS-3505/A3/ --dry-run --keep-going --print-directory
+make: Entering directory '/workspaces/CS-3505/A3'
+g++-11 -g -Wall -fdiagnostics-color=always -c TrieTest.cpp
+g++-11 -g -Wall -fdiagnostics-color=always -c Trie.cpp
+g++-11 -g -Wall -fdiagnostics-color=always -o TrieTest TrieTest.cpp
+make: Leaving directory '/workspaces/CS-3505/A3'
+ 
