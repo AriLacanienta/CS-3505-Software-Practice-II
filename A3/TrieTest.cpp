@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
     Trie dictionary;
     string line;
     while (getline(source, line)) {
-        cout << line << dictionary.addAWord(line) << endl;
+        dictionary.addAWord(line);
     }
 
     source.close();
@@ -82,19 +82,17 @@ void testRuleOfThree() {
     Trie firstTrie;
     firstTrie.addAWord(TEST_WORD_1);
     firstTrie.addAWord(TEST_WORD_2);
-    for (auto result : firstTrie.allWordsBeginningWithPrefix(TEST_PREFIX))
-            cout << result << " ";
-    cout << endl;
-    firstTrie.printTrie("");
-    cout << endl;
+    // cout << endl;
+    // firstTrie.printTrie("");
+    // cout << endl;
 
     // Test copy constructor
     Trie secondTrie(firstTrie);
     assert(secondTrie.isAWord(TEST_WORD_1));
     assert(secondTrie.isAWord(TEST_WORD_2));
 
-    secondTrie.printTrie("");
-    cout << endl;
+    // secondTrie.printTrie("");
+    // cout << endl;
 
     // return;
 
@@ -123,11 +121,11 @@ void testRuleOfThree() {
     assert(!firstTrie.isAWord(T2_UNIQ));
     assert(!firstTrie.isAWord(T3_UNIQ));
 
-    assert(secondTrie.isAWord(T1_UNIQ));
-    assert(!secondTrie.isAWord(T2_UNIQ));
+    assert(!secondTrie.isAWord(T1_UNIQ));
+    assert(secondTrie.isAWord(T2_UNIQ));
     assert(!secondTrie.isAWord(T3_UNIQ));
 
-    assert(thirdTrie.isAWord(T1_UNIQ));
+    assert(!thirdTrie.isAWord(T1_UNIQ));
     assert(!thirdTrie.isAWord(T2_UNIQ));
-    assert(!thirdTrie.isAWord(T3_UNIQ));
+    assert(thirdTrie.isAWord(T3_UNIQ));
 }

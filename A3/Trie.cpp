@@ -1,143 +1,37 @@
-#include <cassert>
 #include "Trie.h"
 
-using std::cerr;
-using std::cout;
-using std::endl;
 
-Trie::Trie() : _isEndOfWord{false}, _nodes{new Trie*[ALPHA_LEN]()}
-{
+Trie::Trie() :_head{Node()} {
+
 }
 
-Trie::Trie(const Trie& other){
-    this->_isEndOfWord = other._isEndOfWord;
-    this->_nodes = new Trie*[ALPHA_LEN]();
-
-    for (int i = 0; i < ALPHA_LEN; i++)
-    {
-        if(other._nodes[i] != nullptr){
-            this->_nodes[i] = new Trie[ALPHA_LEN]();
-            cout << &this->_nodes[i] << " " << &other._nodes[i] << endl;
-            
-        }
-    }
-    
-}
-
-Trie& Trie::operator=(Trie other){
-    std::swap(_isEndOfWord, other._isEndOfWord);
-    std::swap(_nodes, other._nodes);
-    return *this;
-}
-
-Trie::~Trie()
-{
-    delete[] _nodes;
-}
-
-
-bool Trie::addAWord(string toAdd) {
-
-    if(toAdd.empty()){
-        if (_isEndOfWord)
-            return false;
-        else
-            return _isEndOfWord = true;
-    }
-
-    int nextIndex = toAdd.front()-'a';
-    if (_nodes[nextIndex] == nullptr){
-        _nodes[nextIndex] = new Trie();
-    }
-
-    return _nodes[nextIndex]->addAWord(toAdd.substr(1));
+bool Trie::addAWord(string word){
+    return _head.addAWord(word);
 }
 
 bool Trie::isAWord(string word) {
-
-    if (word.empty())
-        return _isEndOfWord;
-
-    int nextIndex = word.front()-'a';
-    if (_nodes[nextIndex] == nullptr){
+    if (!validateInput(word))
         return false;
-    }
 
-    return _nodes[nextIndex]->isAWord(word.substr(1));
+    return _head.isAWord(word);
 }
 
-vector<string> Trie::allWordsBeginningWithPrefix(string prefix){
+vector<string> Trie::allWordsBeginningWithPrefix(string prefix) {
     vector<string> foundWords;
-
-
-    if(prefix.size() != 0){
-        int nextIndex = prefix.front()-'a';
-        if (_nodes[nextIndex] == nullptr)
-            return foundWords;
-
-        for(string word : _nodes[prefix.front()-'a']->allWordsBeginningWithPrefix(prefix.substr(1))){
-            foundWords.push_back(prefix.front()+word);
-        }
+    if(!validateInput(prefix))
         return foundWords;
-    } 
-    
-    if (_isEndOfWord)
-        foundWords.push_back("");
- 
-    for (int i = 0; i < ALPHA_LEN; i++){
-        if (_nodes[i] == nullptr)
-            continue;
-            
-        for(string word : _nodes[i]->allWordsBeginningWithPrefix("")){
-            foundWords.push_back((char)(i+'a') + word);
-        }
+
+    return _head.allWordsBeginningWithPrefix(prefix);
+}
+
+/// @brief Validates whether input text consists of lowercase letters a-z
+/// @param input the text to validate
+/// @return True iff every character in input is a lowercase letter a-z
+bool Trie::validateInput(string input){
+    for (auto character : input) {
+        if (character - 'a' < 0
+        || character - 'z' > 0)
+            return false;
     }
-    return foundWords;
+    return true;
 }
-
-
-void Trie::printTrie(string prefix){
-    for (int i = 0; i < ALPHA_LEN; i++)
-    if (_nodes[i] != nullptr) 
-        cout << (char)(i+'a') << " " << i << " ";
-    else 
-        cout << "_ _ " ;
-    cout << endl;
-
-    for (int i = 0; i < ALPHA_LEN; i++)
-        if (_nodes[i] != nullptr) 
-            _nodes[i]->printTrie("");
-
-
-    // for(int i = 0; i < 26; i++) {
-    //     if (_nodes[i] != nullptr) {
-    //         cout << prefix << (char)('a'+i) << " " << i << endl;
-    //         _nodes[i]->printTrie(prefix + ".");
-    //     }
-    // }
-    return;
-}
-
-/// @brief Attempts to traverse the trie by following edges indexed by letters 
-/// in word. If the Trie is partially traversed, the furthest child is returned
-/// and word contains the remaining indexes (letters) that are not in the Trie
-/// @param word 
-/// @return 
-Trie* Trie::traverseTo(string& word){
-
-    // base case 1: end of word
-    if (word.empty()){
-        return this;
-    }
-
-    // base case 2: end of Trie
-    int nextIndex = word.front()-'a';
-    if (_nodes[nextIndex] == nullptr)
-        return this;
-    
-    // recursive case
-    word = word.substr(1);
-    return _nodes[nextIndex]->traverseTo(word);
-}
-
-
