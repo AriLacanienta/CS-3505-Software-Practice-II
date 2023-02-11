@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "Trie.cpp"
+#include "Trie.h"
 
 using std::cout;
 using std::cerr;
@@ -11,6 +11,8 @@ using std::endl;
 using std::string;
 using std::ifstream;
 
+
+void testRuleOfThree();
 
 /// @brief 
 /// @param argc 
@@ -30,15 +32,19 @@ int main(int argc, char const *argv[])
         return 2;
     }
 
+
     // Read dict into trie
 
     Trie dictionary;
     string line;
     while (getline(source, line)) {
-        dictionary.addAWord(line);
+        cout << line << dictionary.addAWord(line) << endl;
     }
 
     source.close();
+
+    string str = " ";
+    dictionary.printTrie("");
 
     // Query trie
     
@@ -63,7 +69,37 @@ int main(int argc, char const *argv[])
    
     queries.close();
 
-    
+
+    // testRuleOfThree();
 
     return 0;
+}
+
+void testRuleOfThree() {
+
+    Trie firstTrie;
+    firstTrie.addAWord("distance");
+    firstTrie.addAWord("distant");
+    firstTrie.allWordsBeginningWithPrefix("dist");
+
+    // Test copy constructor
+    Trie secondTrie(firstTrie);
+    secondTrie.allWordsBeginningWithPrefix("dist");
+
+    // Test assignment operator
+    Trie thirdTrie;
+    thirdTrie.addAWord("distain");
+    thirdTrie.allWordsBeginningWithPrefix("dist");
+    
+    thirdTrie = firstTrie;
+    thirdTrie.allWordsBeginningWithPrefix("dist");
+
+    // Prove deep copy
+    firstTrie.addAWord("distorted");
+    secondTrie.addAWord("distinguished");
+    thirdTrie.addAWord("distributed");
+
+    firstTrie.isAWord("distorted");
+    secondTrie.isAWord("distorted");
+    thirdTrie.isAWord("distorted");
 }
