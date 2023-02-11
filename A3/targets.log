@@ -7,7 +7,7 @@ make all -f /workspaces/CS-3505/A3/Makefile -C /workspaces/CS-3505/A3/ --print-d
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Feb 11 05:54:01 2023
+# Make data base, printed on Sat Feb 11 06:19:37 2023
 
 # Variables
 
@@ -77,9 +77,6 @@ VCPKG_ROOT = /usr/local/vcpkg
 *F = $(notdir $*)
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
- 
-make: *** No rule to make target 'all'.  Stop.
-
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # default
@@ -171,12 +168,6 @@ clean:
 #  recipe to execute (from '/workspaces/CS-3505/A3/Makefile', line 16):
 	rm ./TrieTest ./*.o
 
-# Not a target:
-Node.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 TrieTest.o: TrieTest.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -191,7 +182,7 @@ alttest: TrieTest
 #  recipe to execute (from '/workspaces/CS-3505/A3/Makefile', line 22):
 	./TrieTest alt_dict.txt alt_queries.txt
 
-Trie.o: Trie.cpp Node.o
+Trie.o: Trie.cpp TrieNode.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -199,17 +190,23 @@ Trie.o: Trie.cpp Node.o
 	$(CC) -c Trie.cpp
 
 # Not a target:
+TrieNode.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 TrieTest.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-TrieTest: TrieTest.o Trie.o Node.o
+TrieTest: TrieTest.o Trie.o TrieNode.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from '/workspaces/CS-3505/A3/Makefile', line 4):
-	$(CC) -o TrieTest TrieTest.o Trie.o Node.o
+	$(CC) -o TrieTest TrieTest.o Trie.o TrieNode.o
 
 # Not a target:
 .DEFAULT:
@@ -230,6 +227,12 @@ Trie.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+TrieNode.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 test: TrieTest
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -237,7 +240,7 @@ test: TrieTest
 #  recipe to execute (from '/workspaces/CS-3505/A3/Makefile', line 19):
 	./TrieTest test_dict.txt test_queries.txt
 
-Node.o: Node.cpp
+Node.o: TrieNode.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -247,25 +250,27 @@ Node.o: Node.cpp
 # Not a target:
 /workspaces/CS-3505/A3/Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-02-11 05:53:47.235713509
+#  Last modified 2023-02-11 06:19:30.572636724
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/36=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/36=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 195 B / avg = 11 B
-# current buf: size = 8162 B / used = 195 B / count = 17 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 210 B / avg = 11 B
+# current buf: size = 8162 B / used = 210 B / count = 18 / avg = 11 B
 
-# strcache performance: lookups = 33 / hit rate = 48%
+# strcache performance: lookups = 33 / hit rate = 45%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=0/33=0%
-# Finished Make data base on Sat Feb 11 05:54:01 2023
+# Load=18/8192=0%, Rehash=0, Collisions=0/33=0%
+# Finished Make data base on Sat Feb 11 06:19:37 2023
 
 # make: Leaving directory '/workspaces/CS-3505/A3'
  
+make: *** No rule to make target 'all'.  Stop.
+

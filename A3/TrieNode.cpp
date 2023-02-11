@@ -1,22 +1,22 @@
 #include <cassert>
-#include "Node.h"
+#include "TrieNode.h"
 
 using std::cerr;
 using std::cout;
 using std::endl;
 
-Node::Node() : _isEndOfWord{false}, _nodes{new Node*[ALPHA_LEN]()}
+TrieNode::TrieNode() : _isEndOfWord{false}, _nodes{new TrieNode*[ALPHA_LEN]()}
 {
 }
 
-Node::Node(const Node& other){
+TrieNode::TrieNode(const TrieNode& other){
     this->_isEndOfWord = other._isEndOfWord;
-    this->_nodes = new Node*[ALPHA_LEN]();
+    this->_nodes = new TrieNode*[ALPHA_LEN]();
 
     for (int i = 0; i < ALPHA_LEN; i++)
     {
         if(other._nodes[i] != nullptr){
-            this->_nodes[i] = new Node(*other._nodes[i]);
+            this->_nodes[i] = new TrieNode(*other._nodes[i]);
             // cout << &this->_nodes[i] << " " << &other._nodes[i] << endl;
             
         }
@@ -24,13 +24,13 @@ Node::Node(const Node& other){
     
 }
 
-Node& Node::operator=(Node other){
+TrieNode& TrieNode::operator=(TrieNode other){
     std::swap(_isEndOfWord, other._isEndOfWord);
     std::swap(_nodes, other._nodes);
     return *this;
 }
 
-Node::~Node()
+TrieNode::~TrieNode()
 {
     for(int i = 0; i < ALPHA_LEN; i++){
         delete _nodes[i];
@@ -39,7 +39,7 @@ Node::~Node()
 }
 
 
-bool Node::addAWord(string toAdd) {
+bool TrieNode::addAWord(string toAdd) {
 
     if(toAdd.empty()){
         if (_isEndOfWord)
@@ -50,13 +50,13 @@ bool Node::addAWord(string toAdd) {
 
     int nextIndex = toAdd.front()-'a';
     if (_nodes[nextIndex] == nullptr){
-        _nodes[nextIndex] = new Node();
+        _nodes[nextIndex] = new TrieNode();
     }
 
     return _nodes[nextIndex]->addAWord(toAdd.substr(1));
 }
 
-bool Node::isAWord(string word) {
+bool TrieNode::isAWord(string word) {
 
     if (word.empty())
         return _isEndOfWord;
@@ -69,7 +69,7 @@ bool Node::isAWord(string word) {
     return _nodes[nextIndex]->isAWord(word.substr(1));
 }
 
-vector<string> Node::allWordsBeginningWithPrefix(string prefix){
+vector<string> TrieNode::allWordsBeginningWithPrefix(string prefix){
     vector<string> foundWords;
 
     if(prefix.size() != 0){
@@ -97,8 +97,18 @@ vector<string> Node::allWordsBeginningWithPrefix(string prefix){
     return foundWords;
 }
 
+void TrieNode::altAllWordsAlgo(string prefix, vector<string>& foundWords) {
+    if (_isEndOfWord)
+        foundWords.push_back(prefix);
 
-void Node::printTrie(string prefix){
+    for (int i = 0; i < ALPHA_LEN; i++){
+        _nodes[i]->altAllWordsAlgo(prefix + (char)(i + 'a'), foundWords);
+    }
+
+}
+
+
+void TrieNode::printTrie(string prefix){
     for (int i = 0; i < ALPHA_LEN; i++)
     if (_nodes[i] != nullptr) 
         cout << (char)(i+'a') << " " << i << " ";
@@ -125,7 +135,7 @@ void Node::printTrie(string prefix){
 /// and word contains the remaining indexes (letters) that are not in the Node
 /// @param word 
 /// @return 
-Node* Node::traverseTo(string& word){
+TrieNode* TrieNode::traverseTo(string& word){
 
     // base case 1: end of word
     if (word.empty()){

@@ -9,24 +9,24 @@ using std::ostream;
 #ifndef NODE_H
 #define NODE_H
 
-class Node
+class TrieNode
 {
 private:
     const static int ALPHA_LEN = 26;
     bool _isEndOfWord;
-    Node** _nodes; 
+    TrieNode** _nodes; 
 public:
-    Node();
-    Node(const Node& other);
-    Node& operator=(Node other);
-    ~Node();
+    TrieNode();
+    TrieNode(const TrieNode& other);
+    TrieNode& operator=(TrieNode other);
+    ~TrieNode();
     bool addAWord(string word);
     bool isAWord(string word);
     vector<string> allWordsBeginningWithPrefix(string prefix);
+    void altAllWordsAlgo(string prefix, vector<string> &foundWords);
     void printTrie(string ws);
+    TrieNode* traverseTo(string& word);
 private:
-    vector<string> recurseAllWordsBeginningWithPrefix(string prefix);
-    Node* traverseTo(string& word);
 };
 
 #endif

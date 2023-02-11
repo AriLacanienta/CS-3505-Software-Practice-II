@@ -1,7 +1,7 @@
 #include "Trie.h"
 
 
-Trie::Trie() :_head{Node()} {
+Trie::Trie() :_head{TrieNode()} {
 
 }
 
@@ -20,7 +20,6 @@ vector<string> Trie::allWordsBeginningWithPrefix(string prefix) {
     vector<string> foundWords;
     if(!validateInput(prefix))
         return foundWords;
-
     return _head.allWordsBeginningWithPrefix(prefix);
 }
 

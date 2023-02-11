@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "Node.h"
+#include "TrieNode.h"
 
 using std::string;
 using std::vector;
@@ -12,7 +12,7 @@ using std::ostream;
 class Trie
 {
 private:
-    Node _head;
+    TrieNode _head;
 public:
     Trie();
     bool addAWord(string word);

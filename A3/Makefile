@@ -1,15 +1,15 @@
 CC = g++ -g -Wall -fdiagnostics-color=always -fsanitize=undefined -fsanitize=address
 
-TrieTest: TrieTest.o Trie.o Node.o
-	$(CC) -o TrieTest TrieTest.o Trie.o Node.o
+TrieTest: TrieTest.o Trie.o TrieNode.o
+	$(CC) -o TrieTest TrieTest.o Trie.o TrieNode.o
 
 TrieTest.o: TrieTest.cpp
 	$(CC) -c TrieTest.cpp
 
-Trie.o: Trie.cpp Node.o
+Trie.o: Trie.cpp TrieNode.o
 	$(CC) -c Trie.cpp
 
-Node.o: Node.cpp
+Node.o: TrieNode.cpp
 	$(CC) -c Node.cpp
 
 clean:

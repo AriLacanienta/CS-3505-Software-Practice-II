@@ -1,5 +1,6 @@
 make TrieTest -f /workspaces/CS-3505/A3/Makefile -C /workspaces/CS-3505/A3/ --dry-run --keep-going --print-directory
 make: Entering directory '/workspaces/CS-3505/A3'
-g++ -g -Wall -fdiagnostics-color=always -fsanitize=undefined -fsanitize=address -o TrieTest TrieTest.o Trie.o Node.o
+g++ -g -Wall -fdiagnostics-color=always -fsanitize=undefined -fsanitize=address -c Trie.cpp
+g++ -g -Wall -fdiagnostics-color=always -fsanitize=undefined -fsanitize=address -o TrieTest TrieTest.o Trie.o TrieNode.o
 make: Leaving directory '/workspaces/CS-3505/A3'
  
