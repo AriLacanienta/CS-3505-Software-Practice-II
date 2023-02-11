@@ -1,5 +1,6 @@
 ///
 
+#include <cassert>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -43,8 +44,7 @@ int main(int argc, char const *argv[])
 
     source.close();
 
-    string str = " ";
-    dictionary.printTrie("");
+    // dictionary.printTrie("");
 
     // Query trie
     
@@ -69,37 +69,65 @@ int main(int argc, char const *argv[])
    
     queries.close();
 
-
-    // testRuleOfThree();
+    testRuleOfThree();
 
     return 0;
 }
 
 void testRuleOfThree() {
+    const string TEST_PREFIX = "dist";
+    const string TEST_WORD_1 = "distance";
+    const string TEST_WORD_2 = "distant";
 
     Trie firstTrie;
-    firstTrie.addAWord("distance");
-    firstTrie.addAWord("distant");
-    firstTrie.allWordsBeginningWithPrefix("dist");
+    firstTrie.addAWord(TEST_WORD_1);
+    firstTrie.addAWord(TEST_WORD_2);
+    for (auto result : firstTrie.allWordsBeginningWithPrefix(TEST_PREFIX))
+            cout << result << " ";
+    cout << endl;
+    firstTrie.printTrie("");
+    cout << endl;
 
     // Test copy constructor
     Trie secondTrie(firstTrie);
-    secondTrie.allWordsBeginningWithPrefix("dist");
+    assert(secondTrie.isAWord(TEST_WORD_1));
+    assert(secondTrie.isAWord(TEST_WORD_2));
+
+    secondTrie.printTrie("");
+    cout << endl;
+
+    // return;
 
     // Test assignment operator
     Trie thirdTrie;
     thirdTrie.addAWord("distain");
-    thirdTrie.allWordsBeginningWithPrefix("dist");
+    assert(!thirdTrie.isAWord(TEST_WORD_1));
+    assert(!thirdTrie.isAWord(TEST_WORD_2));
+    assert(thirdTrie.isAWord("distain"));
+    
     
     thirdTrie = firstTrie;
-    thirdTrie.allWordsBeginningWithPrefix("dist");
+    assert(thirdTrie.isAWord(TEST_WORD_1));
+    assert(thirdTrie.isAWord(TEST_WORD_2));
+    assert(!thirdTrie.isAWord("distain"));
 
     // Prove deep copy
-    firstTrie.addAWord("distorted");
-    secondTrie.addAWord("distinguished");
-    thirdTrie.addAWord("distributed");
+    const string T1_UNIQ = "distorted";
+    const string T2_UNIQ = "distinguished";
+    const string T3_UNIQ = "distributed";
+    firstTrie.addAWord(T1_UNIQ);
+    secondTrie.addAWord(T2_UNIQ);
+    thirdTrie.addAWord(T3_UNIQ);
 
-    firstTrie.isAWord("distorted");
-    secondTrie.isAWord("distorted");
-    thirdTrie.isAWord("distorted");
+    assert(firstTrie.isAWord(T1_UNIQ));
+    assert(!firstTrie.isAWord(T2_UNIQ));
+    assert(!firstTrie.isAWord(T3_UNIQ));
+
+    assert(secondTrie.isAWord(T1_UNIQ));
+    assert(!secondTrie.isAWord(T2_UNIQ));
+    assert(!secondTrie.isAWord(T3_UNIQ));
+
+    assert(thirdTrie.isAWord(T1_UNIQ));
+    assert(!thirdTrie.isAWord(T2_UNIQ));
+    assert(!thirdTrie.isAWord(T3_UNIQ));
 }

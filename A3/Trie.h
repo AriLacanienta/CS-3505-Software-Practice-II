@@ -12,17 +12,18 @@ using std::ostream;
 class Trie
 {
 private:
-    /* data */
     const static int ALPHA_LEN = 26;
     bool _isEndOfWord;
     Trie** _nodes; 
 public:
     Trie();
+    Trie(const Trie& other);
     Trie(string toAdd);
     ~Trie();
     bool addAWord(string toAdd);
     bool isAWord(string toCheck);
     vector<string> allWordsBeginningWithPrefix(string toCheck);
+    Trie& operator=(Trie other);
     void printTrie(string ws);
 private:
     Trie* traverseTo(string& word);

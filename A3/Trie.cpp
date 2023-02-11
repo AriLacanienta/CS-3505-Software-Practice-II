@@ -9,6 +9,27 @@ Trie::Trie() : _isEndOfWord{false}, _nodes{new Trie*[ALPHA_LEN]()}
 {
 }
 
+Trie::Trie(const Trie& other){
+    this->_isEndOfWord = other._isEndOfWord;
+    this->_nodes = new Trie*[ALPHA_LEN]();
+
+    for (int i = 0; i < ALPHA_LEN; i++)
+    {
+        if(other._nodes[i] != nullptr){
+            this->_nodes[i] = new Trie[ALPHA_LEN]();
+            cout << &this->_nodes[i] << " " << &other._nodes[i] << endl;
+            
+        }
+    }
+    
+}
+
+Trie& Trie::operator=(Trie other){
+    std::swap(_isEndOfWord, other._isEndOfWord);
+    std::swap(_nodes, other._nodes);
+    return *this;
+}
+
 Trie::~Trie()
 {
     delete[] _nodes;
@@ -76,12 +97,24 @@ vector<string> Trie::allWordsBeginningWithPrefix(string prefix){
 
 
 void Trie::printTrie(string prefix){
-    for(int i = 0; i < 26; i++) {
-        if (_nodes[i] != nullptr) {
-            cout << prefix << (char)('a'+i) << " " << i << endl;
-            _nodes[i]->printTrie(prefix + ".");
-        }
-    }
+    for (int i = 0; i < ALPHA_LEN; i++)
+    if (_nodes[i] != nullptr) 
+        cout << (char)(i+'a') << " " << i << " ";
+    else 
+        cout << "_ _ " ;
+    cout << endl;
+
+    for (int i = 0; i < ALPHA_LEN; i++)
+        if (_nodes[i] != nullptr) 
+            _nodes[i]->printTrie("");
+
+
+    // for(int i = 0; i < 26; i++) {
+    //     if (_nodes[i] != nullptr) {
+    //         cout << prefix << (char)('a'+i) << " " << i << endl;
+    //         _nodes[i]->printTrie(prefix + ".");
+    //     }
+    // }
     return;
 }
 
