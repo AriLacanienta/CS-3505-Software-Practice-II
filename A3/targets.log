@@ -7,12 +7,12 @@ make all -f /workspaces/CS-3505/A3/Makefile -C /workspaces/CS-3505/A3/ --print-d
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Feb 11 06:19:37 2023
+# Make data base, printed on Sat Feb 11 19:19:22 2023
 
 # Variables
 
 # environment
-REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-822c86fae65f83cc2d7b0b3c66dc36b82808fc58.sock"]
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-5f23536dd7b7f9cc64c4db8e2dd3170ffa708639.sock"]
 # environment
 LC_ALL = C
 # environment
@@ -60,7 +60,7 @@ VSCODE_L10N_BUNDLE_LOCATION =
 # environment
 MFLAGS = -pqrRw
 # environment
-SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-822c86fae65f83cc2d7b0b3c66dc36b82808fc58.sock
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-5f23536dd7b7f9cc64c4db8e2dd3170ffa708639.sock
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -92,13 +92,13 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
+PATH = /vscode/vscode-server/bin/linux-x64/441438abd1ac652551dbe4d408dfcec8a499b8bf/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg:/home/vscode/.local/bin
 # default
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
 # environment
-REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-822c86fae65f83cc2d7b0b3c66dc36b82808fc58.sock
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-5f23536dd7b7f9cc64c4db8e2dd3170ffa708639.sock
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
@@ -126,7 +126,7 @@ VSCODE_AGENT_FOLDER = /home/vscode/.vscode-server
 # environment
 _ = /usr/bin/cat
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6e5be69d-f9d3-4ec5-8444-38ae5b576d18.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a89ec429-001f-4046-b2e7-d36990c8ca98.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -268,7 +268,7 @@ Node.o: TrieNode.cpp
 # strcache performance: lookups = 33 / hit rate = 45%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=0/33=0%
-# Finished Make data base on Sat Feb 11 06:19:37 2023
+# Finished Make data base on Sat Feb 11 19:19:22 2023
 
 # make: Leaving directory '/workspaces/CS-3505/A3'
  
