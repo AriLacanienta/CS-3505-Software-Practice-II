@@ -1,3 +1,11 @@
+###############################################################################
+# Makefile
+# Basic trie build and test targets
+# Assignment 03: A Trie and Rule-of-Three
+# 
+# author Ari Lacanienta
+# date 2/11/2023
+###############################################################################
 CC = g++ -g -Wall -fdiagnostics-color=always -fsanitize=undefined -fsanitize=address
 
 TrieTest: TrieTest.o Trie.o TrieNode.o
