@@ -3,7 +3,7 @@
 
 
 ## Assignment 01 - 1D Celular autonoma
-/Assignment-01/CA.cpp
+/A1/CA.cpp
 
 ### Overview
 This project generates celular autonoma based on rules specified by an 8 digit binary number. Generation size and number of generations is also editable.
@@ -18,12 +18,12 @@ This project generates a pdf that displays a user's text in the shape of a spira
 
 Uses the Facade design pattern. I'm very interested to start getting into Gang of Four stuff. I originally stumbled accross the GoF when I was studying parse trees for my SQR language server.
 
+### Assignment 03 - A Trie
+/A3/TrieTest
 
-## Lab01
-Lab #1 was originally completed in a different environment and contained no significant code.
+### Overview
+This project is just an implementation of a Trie, where the Trie is composed of TrieNodes.
 
-## Lab02
-Lab #2 should likewise be considered lost to time.
 
 ## Lab03
 Basic makefile and static library practice
