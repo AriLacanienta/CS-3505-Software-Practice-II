@@ -1,5 +1,6 @@
 # CS-3505
 
+These projects were all coded by me using c++ in an ubuntu container
 
 
 ## Assignment 01 - 1D Celular autonoma
